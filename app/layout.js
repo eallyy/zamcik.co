@@ -5,7 +5,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Zamcik.co ile zamcıklanmanın tadını sen de çıkar',
-  description: 'Developed by alany.co',
+  description: 'Project of alany.co',
+  author: 'Emir ALANYALIOGLU'
 }
 
 export default function RootLayout({ children }) {
