@@ -12,7 +12,7 @@ export default function Home() {
     'Z A M C I K L A D I N I Z !',
     'Oh ne güzel. Bir zam da sen koydun.',
     'Zamla beni zumla beni koy bir zamcık da sen yar.'
-];
+  ];
 
   const initializeOlurumTurkiyem = () => {
     const olurumTurkiyem = new Audio('olurum_turkiyem.mp3');
@@ -28,7 +28,6 @@ export default function Home() {
     olurumTurkiyem.play();
 
     let zamAlertIndex = Math.floor(Math.random() * zamAlerts.length);
-
     toast.error(zamAlerts[zamAlertIndex], {
       position: 'top-center',
       autoClose: 7000,
@@ -51,7 +50,7 @@ export default function Home() {
       >
         Zamcıkla
       </button>
-      <ToastContainer />
+      <ToastContainer limit={3} newestOnTop={true} />
     </div>
   );
 }
