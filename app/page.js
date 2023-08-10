@@ -6,6 +6,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
   const [olurumTurkiyem, setOlurumTurkiyem] = useState(null);
+  const zamAlerts = [
+    'Zamcık yollandı! Yarın haberlerde görüsün.',
+    'Tebrikler! Ülkenin zamına koydun.',
+    'Z A M C I K L A D I N I Z !',
+    'Oh ne güzel. Bir zam da sen koydun.',
+    'Zamla beni zumla beni koy bir zamcık da sen yar.'
+];
 
   const initializeOlurumTurkiyem = () => {
     const olurumTurkiyem = new Audio('olurum_turkiyem.mp3');
@@ -20,7 +27,9 @@ export default function Home() {
     olurumTurkiyem.currentTime = 0;
     olurumTurkiyem.play();
 
-    toast.error('Zamcık yollandı! Yarın haberlerde görürsün.', {
+    let zamAlertIndex = Math.floor(Math.random() * zamAlerts.length);
+
+    toast.error(zamAlerts[zamAlertIndex], {
       position: 'top-center',
       autoClose: 7000,
       pauseOnHover: false,
