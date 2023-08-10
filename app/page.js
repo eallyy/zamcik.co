@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
   const [olurumTurkiyem, setOlurumTurkiyem] = useState(null);
+  const [zamButton, setZamButton] = useState(null);
   const zamAlerts = [
     'Zamcık yollandı! Yarın haberlerde görüsün.',
     'Tebrikler! Ülkenin zamına koydun.',
@@ -13,14 +14,23 @@ export default function Home() {
     'Oh ne güzel. Bir zam da sen koydun.',
     'Zamla beni zumla beni koy bir zamcık da sen yar.'
   ];
+  const zamButtons = [
+    'Zamcıkla',
+    'Zamına Koy',
+    'ZAM-K'
+  ];
 
   const initializeOlurumTurkiyem = () => {
-    const olurumTurkiyem = new Audio('olurum_turkiyem.mp3');
+    let olurumTurkiyem = new Audio('olurum_turkiyem.mp3');
     setOlurumTurkiyem(olurumTurkiyem);
   };
 
   useEffect(() => {
-    initializeOlurumTurkiyem();
+    setTimeout(() => {
+      initializeOlurumTurkiyem();
+      let zamButtonIndex = Math.floor(Math.random() * zamButtons.length);
+      setZamButton(zamButtons[zamButtonIndex]);
+    }, 1000)
   }, []);
 
   const handleZamClick = () => {
@@ -42,13 +52,13 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
-      <img src="/turkey_flag.svg" alt="Turkey Logo" className="w-64 h-64" />
+    <div className={`flex flex-col justify-center items-center h-screen`}>
+      <img src="/turkey_flag.svg" alt="Turkey Logo" className={`w-64 h-64 transition-opacity ${!zamButton ? 'opacity-0' : 'opacity-100'}`} />
       <button
-        className="rounded-md bg-transparent text-white px-12 py-3 hover:bg-white hover:text-black border-2 border-white"
+        className={`rounded-md bg-transparent text-white px-12 py-3 hover:bg-white hover:text-black border-2 border-white transition-opacity ${!zamButton ? 'opacity-0' : 'opacity-100'}`}
         onClick={handleZamClick}
       >
-        Zamcıkla
+        {zamButton}
       </button>
       <ToastContainer limit={3} newestOnTop={true} />
     </div>
