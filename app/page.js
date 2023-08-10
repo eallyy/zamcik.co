@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import { FaArrowTrendDown } from 'react-icons/fa6';
+import { FaSmoking } from 'react-icons/fa6';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
@@ -47,15 +47,15 @@ export default function Home() {
       pauseOnHover: false,
       closeOnClick: false,
       hideProgressBar: true,
-      icon: <FaArrowTrendDown />
+      icon: <FaSmoking />
     });
   };
 
   return (
     <div className={`flex flex-col justify-center items-center h-screen`}>
-      <img src="/turkey_flag.svg" alt="Turkey Logo" className={`w-64 h-64 transition-opacity ${!zamButton ? 'opacity-0' : 'opacity-100'}`} />
+      <img src="/turkey_flag.svg" alt="Turkey Logo" className={`w-64 h-64 transition-opacity ${zamButton ? 'opacity-100 ' : 'opacity-0'}`} />
       <button
-        className={`rounded-md bg-transparent text-white px-12 py-3 hover:bg-white hover:text-black border-2 border-white transition-opacity ${!zamButton ? 'opacity-0' : 'opacity-100'}`}
+        className={`rounded-md bg-transparent text-white px-12 py-3 hover:bg-white hover:text-black border-2 border-white transition-opacity ${!zamButton ? 'opacity-0 hidden' : 'opacity-100'}`}
         onClick={handleZamClick}
       >
         {zamButton}
