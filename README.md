@@ -22,6 +22,7 @@
     zamcik.co Website Repository
     <br />
     It is a website project created for parody purposes.
+    <br />
     <a href="https://github.com/eallyy/zamcik.co"><strong>Explore the docs »</strong></a>
     <br />
     <br />
