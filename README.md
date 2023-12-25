@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/eallyy/zamcik.co">
-    <img src="public_turkey_flag.svg" alt="Logo" width="80" height="80">
+    <img src="app/favicon.ico" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">zamcik.co</h3>
